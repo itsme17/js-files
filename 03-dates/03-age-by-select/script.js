@@ -12,5 +12,19 @@
 (function() {
 
     // your code here
+    document.getElementById('run').addEventListener('click',age)
+    function age(){
+        const currentDate = new Date()
+        let day = document.getElementById('dob-day').value
+        let month = document.getElementById('dob-month').value
+        let year = document.getElementById('dob-year').value
+        let dateOfbirth = new Date(year, month, day);
+
+        let ageDiff = currentDate.getTime() - dateOfbirth.getTime();
+        let ageDate = new Date(ageDiff);
+        let age = Math.abs(ageDate.getUTCFullYear() - 1970);
+
+        alert("Your age is: " + age);
+    }
 
 })();

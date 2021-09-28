@@ -14,5 +14,18 @@
     // to change the content of a tag: document.getElementById("element-id").innerHTML = "new-value"
 
     // your code here
+    let today = new Date();
+    let day = today.getDay();
+    let date = today.getDate();
+    let month = today.getMonth();
+    let year = today.getFullYear();
+    let hour = today.getHours();
+    let min = today.getMinutes();
+
+    let weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    let monthName = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+    let fullTime = weekdays[day] + " " + date + " " + monthName[month] + " " + year + ", " + hour + "h" + min;
+    document.getElementById("target").innerHTML = fullTime;
 
 })();
