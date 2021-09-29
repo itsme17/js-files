@@ -12,28 +12,30 @@
 (function() {
 
     // your code here
-    let monthName = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    const monthName = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
-    let year = document.getElementById("year").value;
-    let button = document.getElementById("run");
 
-    button.addEventListener('click', ()=>{
 
-        let date = new Date();
-        let dates = [];
+    const button = document.getElementById("run");
 
-        for (let month = 0; month < 12; month++) {
+    button.addEventListener('click', getMonths);
 
-            date.setFullYear(year, month, 13);
+        function getMonths() {
+            var year = document.getElementById("year").value;
+            let d = new Date();
+            let dates = [];
 
-            if (date.getDay() == 5) {
-                dates.push(monthName[month]);
+            for (let month = 0; month < 12; month++) {
+
+                d.setFullYear(year, month, 13);
+
+                if (d.getDay() === 5) {
+                    dates.push(monthName[month]);
+                }
             }
+            alert(dates);
+        } 
 
-        }
-        alert(dates);
-
-    })
 
 
 })();
