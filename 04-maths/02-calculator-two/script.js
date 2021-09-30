@@ -14,6 +14,33 @@
 
     var performOperation = function(operation) {
         // perform the operation
+
+        switch (operation) {
+            case "addition":
+                var input1=document.getElementById("op-one").value;
+                var input2=document.getElementById("op-two").value;
+                let sum = Number(input1)+Number(input2);
+                alert(sum);
+                break;
+            case "substraction":
+                var input1=document.getElementById("op-one").value;
+                var input2=document.getElementById("op-two").value;
+                let subtract = input1-input2;
+                alert(subtract);
+                break;
+            case "multiplication":
+                var input1=document.getElementById("op-one").value;
+                var input2=document.getElementById("op-two").value;
+                let multiply = Number(input1)*Number(input2);
+                alert(multiply);
+                break;
+            case "division":
+                var input1=document.getElementById("op-one").value;
+                var input2=document.getElementById("op-two").value;
+                let divide = Number(input1)/Number(input2);
+                alert(divide);
+                break;
+        }
     };
 
     Array.from(document.querySelectorAll("button.operator")).forEach(function($btn) {

@@ -16,7 +16,20 @@
     document.getElementById("run").addEventListener("click", function() {
 
         // your code here
+        const factorial = n => {
+            var result = 1;
+            for(i=1;i<=n;i++) {
+                result =  result * i;
+            }
+            return result;
+        }
 
-    });
+        document.getElementById("run").addEventListener("click", function() {
+            var num = document.getElementById("number").value;
+            alert(factorial(num));
+
+        });
+
+        });
 
 })();
