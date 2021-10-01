@@ -90,5 +90,9 @@
     ];
 
     // your code here
+    document.getElementById("run").addEventListener("click", function (){
+        let sum = people.reduce((total, currentValue) => total + currentValue.age, 0);
+        console.log(sum);
+    })
 
 })();
