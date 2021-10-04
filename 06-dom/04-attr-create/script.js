@@ -12,5 +12,7 @@
 (function() {
 
     // your code here
+    document.getElementById("target").innerHTML = "<img src=\"http://www.randomkittengenerator.com/cats/rotator.php\">"
+    document.querySelector("#source").remove()
 
 })();

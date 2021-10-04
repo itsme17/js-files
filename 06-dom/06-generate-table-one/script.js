@@ -12,5 +12,21 @@
 (function() {
 
     // your code here
+    document.getElementById("target").innerHTML = "<table>\n" +
+        "<tbody>\n" +
+        "<tr>\n" +
+        "<td>&nbsp;</td>\n" +
+        "<td>&nbsp;</td>\n" +
+        "<td>&nbsp;</td>\n" +
+        "<td>&nbsp;</td>\n" +
+        "<td>&nbsp;</td>\n" +
+        "<td>&nbsp;</td>\n" +
+        "<td>&nbsp;</td>\n" +
+        "<td>&nbsp;</td>\n" +
+        "<td>&nbsp;</td>\n" +
+        "<td>&nbsp;</td>\n" +
+        "</tr>\n" +
+        "</tbody>\n" +
+        "</table>"
 
 })();

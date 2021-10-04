@@ -12,5 +12,9 @@
 (function() {
 
     // your code here
+    for (let i = 0;i <document.querySelectorAll(".target").length;i++){
+        document.querySelectorAll(".target")[i].innerHTML="owned."
+    }
+
 
 })();
