@@ -11,4 +11,10 @@
 
 (() => {
     // your code here
+    async  function  getApiData(){
+        fetch("../../_shared/api.json")
+            .then(response => response.json())
+            .then(data => console.log(data));
+    }
+    document.getElementById("run").addEventListener("click",getApiData);
 })();
