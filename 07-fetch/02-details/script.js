@@ -12,28 +12,28 @@
 (() => {
     // your code here
     var button = document.getElementById('run');
-    var input = document.getElementById('hero-id').value;
+    var input = document.getElementById('hero-id');
 
-    var fetched = async () => {
+    var getData = async () => {
         await fetch('../../_shared/api.json')
             .then(result => result.json())
             .then(data => {
                 button.addEventListener('click', () => {
                     data.heroes.map(obj => {
-                        if (input == obj.id) {
+                        if (input.value == obj.id) {
                             const template = obj;
                             console.log(template)
-                            let xPerson = document.getElementById('tpl-hero').content.cloneNode(true);
-                            xPerson.querySelector('.name').innerText = template.name;
-                            xPerson.querySelector('.alter-ego').innerText = template.alterEgo;
-                            xPerson.querySelector('.powers').innerText = template.abilities;
-                            let target = document.getElementById("target");
-                            target.appendChild(xPerson);
+                            let xHero = document.getElementById('tpl-hero').content.cloneNode(true);
+                            xHero.querySelector('.name').innerText = template.name;
+                            xHero.querySelector('.alter-ego').innerText = template.alterEgo;
+                            xHero.querySelector('.powers').innerText = template.abilities;
+                            document.getElementById("target").appendChild(xHero);
                         }
                     })
                 })
             })
     }
-    fetched();
+    getData();
+
 
 })();
