@@ -12,5 +12,12 @@
 (function() {
 
     // your code here
+        const validIndicator =  document.querySelector("#validity.indicator");
+        document.getElementById("pass-one").addEventListener("input", function(){
+            validLength = (this.value.length >= 8) ; false;
+            validChars = (this.value.replace(/[^0-9]/g,"").length >= 2) ; false;
+            validIndicator.innerHTML = (validLength && validChars) ? "ok": "Not ok";
+        });
 
-})();
+
+    })();

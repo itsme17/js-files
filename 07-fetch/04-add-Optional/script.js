@@ -11,4 +11,32 @@
 
 (() => {
     // your code here
+    async function addHero(){
+        let api = await fetch("http://localhost:3000/heroes");
+        let data = await api.json();
+        console.log(data)
+
+        let heroName = document.getElementById("hero-name").value;
+
+        let heroAlterEgo = document.getElementById("hero-alter-ego").value;
+
+        let heroPowers = document.getElementById("hero-powers").value;
+        heroPowers=heroPowers.split(",");
+
+        if(heroName == "" || heroAlterEgo == "" || heroPowers == ""){
+            alert("Identify yourself!");
+        }else{
+            let user = {
+                "id": data.length + 1,
+                "name": heroName,
+                "alterEgo": heroAlterEgo,
+                "abilities": heroPowers,
+            }
+            data.push(user);
+            console.log(data);
+        }
+    }
+    let button = document.getElementById('run');
+    button.addEventListener('click', addHero)
+
 })();

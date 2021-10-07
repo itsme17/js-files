@@ -12,5 +12,21 @@
 (function() {
 
     // your code here
+    var pass1 =  document.getElementById("pass-one");
+    var pass2 =  document.getElementById("pass-two");
+
+    document.getElementById("run").addEventListener("click", function() {
+
+        if (pass1.value != pass2.value){
+
+            pass1.setAttribute("class", "error");
+            pass2.setAttribute("class", "error");
+
+            console.log("try again");
+        }
+        else{
+            console.log("right");
+        }
+    });
 
 })();

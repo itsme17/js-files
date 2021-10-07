@@ -11,4 +11,22 @@
 
 (() => {
     // your code here
+    var button = document.getElementById('run');
+
+    var getData = async () => {
+        await fetch('../../_shared/api.json')
+            .then(result => result.json())
+            .then(data => {
+                button.addEventListener('click', () => {
+                    data.heroes.map(obj => {
+                            let xMan = document.getElementById('tpl-hero').content.cloneNode(true);
+                            xMan.querySelector('.name').innerText = obj.name;
+                            xMan.querySelector('.alter-ego').innerText = obj.alterEgo;
+                            xMan.querySelector('.powers').innerText = obj.abilities;
+                            document.getElementById("target").appendChild(xMan);
+                    })
+                })
+            })
+    }
+    getData();
 })();
